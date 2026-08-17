@@ -145,7 +145,38 @@
   
 <script>
 function showSurprise() {
-  document.getElementById("surpriseBox").style.display = "flex";
+    document.getElementById("surpriseBox").style.display = "flex";
+
+    const symbols = ["💗", "💕", "✨", "🎉", "💖"];
+
+    for (let i = 0; i < 35; i++) {
+        const item = document.createElement("div");
+        item.innerText = symbols[Math.floor(Math.random() * symbols.length)];
+
+        item.style.position = "fixed";
+        item.style.left = Math.random() * 100 + "vw";
+        item.style.top = "-40px";
+        item.style.fontSize = (18 + Math.random() * 22) + "px";
+        item.style.zIndex = "10000";
+        item.style.pointerEvents = "none";
+
+        document.body.appendChild(item);
+
+        const duration = 2500 + Math.random() * 2500;
+
+        item.animate(
+            [
+                { transform: "translateY(0) rotate(0deg)", opacity: 1 },
+                { transform: "translateY(110vh) rotate(360deg)", opacity: 0 }
+            ],
+            {
+                duration: duration,
+                easing: "linear"
+            }
+        );
+
+        setTimeout(() => item.remove(), duration);
+    }
 }
 
 function closeSurprise() {
