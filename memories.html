@@ -123,12 +123,19 @@
 </p>
 
 <a class="back" href="index.html">❤️ Back to Birthday</a>
-<audio autoplay loop>
-  <source src="WhatsApp Audio 2026-08-19 at 12.08.35 AM (1).mp3" type="audio/mpeg">
+<audio id="bgm" loop>
+    <source src="WhatsApp Audio 2026-08-19 at 12.08.35 AM (1).mp3" type="audio/mpeg">
 </audio>
 
 <script>
-  document.querySelector("audio").volume = 0.15;
-</script>
+    const bgm = document.getElementById("bgm");
+
+    document.addEventListener("click", function () {
+        bgm.volume = 0.15;
+        bgm.play();
+    }, { once: true });
+</script> 
+
+
 </body>
 </html>
