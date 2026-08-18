@@ -123,18 +123,24 @@
 </p>
 
 <a class="back" href="index.html">❤️ Back to Birthday</a>
+<button id="musicBtn" style="margin:20px; padding:12px 22px; border:none; border-radius:25px; background:#ff5c8a; color:white; font-size:16px;">
+🎵 Play Romantic Music
+</button>
+
 <audio id="bgm" loop>
-    <source src="WhatsApp Audio 2026-08-19 at 12.08.35 AM (1).mp3" type="audio/mpeg">
+  <source src="WhatsApp Audio 2026-08-19 at 12.08.35 AM (1).mp3" type="audio/mpeg">
 </audio>
 
 <script>
-    const bgm = document.getElementById("bgm");
+const bgm = document.getElementById("bgm");
+const musicBtn = document.getElementById("musicBtn");
 
-    document.addEventListener("click", function () {
-        bgm.volume = 0.15;
-        bgm.play();
-    }, { once: true });
-</script> 
+musicBtn.addEventListener("click", function() {
+  bgm.volume = 0.15;
+  bgm.play();
+  musicBtn.innerHTML = "💕 Music Playing...";
+});
+</script>  
 
 
 </body>
