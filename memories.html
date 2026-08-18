@@ -127,20 +127,18 @@
 🎵 Play Romantic Music
 </button>
 
-<audio id="bgm" controls loop>
-  <source src="WhatsApp%20Audio%202026-08-19%20at%2012.08.35%20AM%20%281%29.mp3" type="audio/mpeg"> 
-</audio>
+<audio id="bgm" loop>
+  <source src="bgm.mp3" type="audio/mpeg">
+</audio> 
 
 <script>
 const bgm = document.getElementById("bgm");
-const musicBtn = document.getElementById("musicBtn");
 
-musicBtn.addEventListener("click", function() {
+document.addEventListener("click", function () {
   bgm.volume = 0.15;
   bgm.play();
-  musicBtn.innerHTML = "💕 Music Playing...";
-});
-</script>  
+}, { once: true });
+</script> 
 
 
 </body>
